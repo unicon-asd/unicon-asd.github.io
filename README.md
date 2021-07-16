@@ -1,3 +1,0 @@
-# UniCon
-## A novel and unified Active Speaker Detection (ASD) framework
-More details are coming soon...

@@ -227,7 +227,6 @@
     </span></h4> 
   </div>
 
-
   <section class="abstract">
     <center>
     <img src="source/teaser.svg" alt="feature", height="180">
@@ -237,13 +236,12 @@
     We propose a new efficient framework, the Unified Context Network (<B>UniCon</B>), for robust active speaker detection (ASD). Traditional methods for ASD usually operate on each candidate's pre-cropped face track separately and do not sufficiently consider relationships among the candidates. This potentially limits performance, especially in challenging scenarios with low-resolution faces, multiple candidates, etc. Our solution is a novel, unified framework that focuses on jointly modeling multiple types of <I>contextual</I> information: spatial context to indicate the position and scale of each candidate's face, relational context to capture the visual relationships among the candidates and contrast audio-visual affinities with each other, and temporal context to aggregate long-term information and smooth out local uncertainties. Based on such information, our model optimizes all candidates in a unified process for robust and reliable ASD. A thorough ablation study is performed on several challenging ASD benchmarks under different settings. In particular, our method outperforms the state-of-the-art by a large margin of about 15% mean Average Precision (mAP) absolute on two challenging subsets: one with three candidate speakers, and the other with faces smaller than 64 pixels. Together, our UniCon achieves 92.0% mAP on the AVA-ActiveSpeaker validation set, surpassing 90% for the first time on this challenging dataset at the time of submission. 
     </font></i></p>
 
-
   </section>
 
 <section>
   <header>Model Overview</header>
-  <center><img src="source/model.svg" alt="feature", height="320"></center>
   <hr class="midhr">
+  <center><img src="source/model.svg" alt="feature", height="320"></center>
   <p> <B>Model overview:</B> Given a video, we first extract face track features and audio features. Face scale and position information are encoded as 2D Gaussians and embedded with CNN layers, which we refer to as spatial context. Next, we construct contextual audio-visual representations for each candidate, through intermediate visual relational context and audio-visual relational context modules. For the visual relational context, we introduce a permutation-equivariant layer to refine each speaker’s visual representation by incorporating pairwise relationships and long-term temporal context. For the audio-visual relational context, we model audio-visual affinity over time for each candidate and then suppress non-active speakers by contrasting their affinity features with others. The final refined visual and audio-visual representations are concatenated and passed through a shared prediction layer to estimate a confidence score for each visible candidate.</p> 
   <br>
 
@@ -251,6 +249,7 @@
 	
 <section>
   <header>Supplementary Video</header>
+  <hr class="midhr">
   <div style="text-align:center"> 
   <button onclick="playPause()">Play/Pause</button> 
   <button onclick="makeBig()">Big</button>
